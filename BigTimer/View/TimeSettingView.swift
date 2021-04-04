@@ -12,6 +12,7 @@ struct TimeSettingView: View {
             VStack{
                 PickerView()
                 StartButtonView()
+                SoundSelectView()
             }
     }
 }
