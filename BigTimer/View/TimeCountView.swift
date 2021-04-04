@@ -26,6 +26,10 @@ struct TimeCountView: View {
             VStack{
               TimeTextView()
             }
+            VStack{
+                Spacer()
+                StartButtonCountView()
+            }
         }
     }
 }
