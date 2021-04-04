@@ -96,7 +96,9 @@
 			isa = PBXGroup;
 			children = (
 				D8C7176426198B2D00E4F10B /* BigTimerApp.swift */,
-				D8C7176626198B2D00E4F10B /* ContentView.swift */,
+				D8C717952619974B00E4F10B /* ViewModel */,
+				D8C717932619971D00E4F10B /* View */,
+				D8C71792261996FE00E4F10B /* Model */,
 				D8C7176826198B3000E4F10B /* Assets.xcassets */,
 				D8C7176D26198B3000E4F10B /* Info.plist */,
 				D8C7176A26198B3000E4F10B /* Preview Content */,
@@ -128,6 +130,28 @@
 				D8C7178326198B3000E4F10B /* Info.plist */,
 			);
 			path = BigTimerUITests;
+			sourceTree = "<group>";
+		};
+		D8C71792261996FE00E4F10B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D8C717932619971D00E4F10B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D8C7176626198B2D00E4F10B /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D8C717952619974B00E4F10B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
