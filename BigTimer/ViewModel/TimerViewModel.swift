@@ -6,18 +6,20 @@
 //
 
 import Foundation
+import SwiftUI
 import AudioToolbox
 
-class TimerViewModel: ObservableObject, Identifiable{
+class TimerViewModel: ObservableObject{
+    @Published var timerModel = TimerModel()
     @Published var hourSelection = 0
-    @Published var minSeledction = 0
+    @Published var minSelection = 0
     @Published var secSelection = 0
-    let timerModel = TimerModel()
+    @Published var timeLeftStr = ""
     let soundModel = SoundModel()
     var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     func setTimer(){
-        timerModel.setTime = Double(hourSelection * 3600 + minSeledction * 60 + secSelection)
+        timerModel.setTime = Double(hourSelection * 3600 + minSelection * 60 + secSelection)
         timerModel.timeLeft = timerModel.setTime
         
         if timerModel.timeLeft < 60 {
@@ -36,12 +38,13 @@ class TimerViewModel: ObservableObject, Identifiable{
 
         switch timerModel.displayedTimeFormat {
             case .hr:
-                return String(format: "%02d:%02d:%02d", hr, min, sec)
+                self.timeLeftStr = String(format: "%02d:%02d:%02d", hr, min, sec)
             case .min:
-                return String(format: "%02d:%02d", min, sec)
+                self.timeLeftStr = String(format: "%02d:%02d", min, sec)
             case .sec:
-                return String(format: "%02d", sec)
+                self.timeLeftStr = String(format: "%02d", sec)
         }
+        return self.timeLeftStr
     }
     
     func run(){
@@ -90,6 +93,14 @@ class TimerViewModel: ObservableObject, Identifiable{
             self.start()
         } else if self.timerModel.timerStatus == .running {
             self.pause()
+        }
+    }
+    
+    func isTimer() -> Bool{
+        if timerModel.timerStatus == .ready {
+            return false
+        } else{
+            return true
         }
     }
 }

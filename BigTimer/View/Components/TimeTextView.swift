@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct TimeTextView: View {
+    @EnvironmentObject var timerViewModel: TimerViewModel
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
     
     var body: some View {
-        Text("11:11")
+        Text(self.timerViewModel.displayTimer())
         .font(Font(UIFont.monospacedDigitSystemFont(ofSize: self.screenWidth * 0.3, weight: .bold)))
     }
 }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TimeCountView: View {
+    @EnvironmentObject var timerViewModel: TimerViewModel
     var body: some View {
         ZStack{
             VStack{
@@ -24,12 +25,19 @@ struct TimeCountView: View {
                 Spacer()
             }
             VStack{
-              TimeTextView()
+                if timerViewModel.isTimer(){
+                    TimeTextView()
+                } else {
+                    PickerView()
+                }
             }
             VStack{
                 Spacer()
                 StartButtonCountView()
             }
+        }
+        .onReceive(timerViewModel.timer) { _ in
+            timerViewModel.run()
         }
     }
 }
