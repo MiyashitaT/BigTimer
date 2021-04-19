@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct BigTimerApp: App {
+    @EnvironmentObject var timerViewModel: TimerViewModel
     var body: some Scene {
         WindowGroup {
             TimeCountView()
+                .environmentObject(TimerViewModel())
         }
     }
 }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PickerView: View {
+    @EnvironmentObject var timerViewModel: TimerViewModel
 
     let screenWidth = UIScreen.main.bounds.width
 
@@ -24,7 +25,7 @@ struct PickerView: View {
             PickerContent(
                 text: "時間",
                 time: self.hours,
-                selection: 0,
+                selection: self.$timerViewModel.hourSelection,
                 screenWidth:  self.screenWidth,
                 screenHeight: self.screenHeight
             )
@@ -32,14 +33,14 @@ struct PickerView: View {
             PickerContent(
                 text: "分",
                 time: self.minutes,
-                selection: 0,
+                selection: self.$timerViewModel.minSelection,
                 screenWidth: self.screenWidth,
                 screenHeight: self.screenHeight)
             
             PickerContent(
                 text: "秒",
                 time: self.seconds,
-                selection: 0,
+                selection: self.$timerViewModel.secSelection,
                 screenWidth: self.screenWidth,
                 screenHeight: self.screenHeight)
         }
@@ -49,7 +50,7 @@ struct PickerView: View {
 struct PickerContent: View{
     var text: String
     var time: [Int]
-    @State var selection: Int
+    @Binding var selection: Int
     let screenWidth: CGFloat
     let screenHeight: CGFloat
     
