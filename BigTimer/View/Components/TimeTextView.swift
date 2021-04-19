@@ -12,8 +12,8 @@ struct TimeTextView: View {
     let screenHeight = UIScreen.main.bounds.height
     
     var body: some View {
-        Text("11:11")
-        .font(Font(UIFont.monospacedDigitSystemFont(ofSize: self.screenWidth * 0.3, weight: .bold)))
+        Text("11:19")
+            .font(.custom("DSEG7ClassicMini-Bold", size: self.screenWidth * 0.2))
     }
 }
 

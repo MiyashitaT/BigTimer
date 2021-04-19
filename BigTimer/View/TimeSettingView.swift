@@ -9,11 +9,32 @@ import SwiftUI
 
 struct TimeSettingView: View {
     var body: some View {
+        ZStack{
+            VStack{
+                HStack{
+                    Spacer()
+                    SoundButtonView()
+                        .padding(EdgeInsets(
+                            top: 20,
+                            leading: 0,
+                            bottom: 0,
+                            trailing: 20
+                        ))
+                }
+                Spacer()
+            }
+
             VStack{
                 PickerView()
                 StartButtonView()
-                SoundSelectView()
+                .padding(EdgeInsets(
+                    top: 50,
+                    leading: 30,
+                    bottom: 30,
+                    trailing: 30
+                ))
             }
+        }
     }
 }
 
