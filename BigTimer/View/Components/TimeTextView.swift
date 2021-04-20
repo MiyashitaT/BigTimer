@@ -13,7 +13,7 @@ struct TimeTextView: View {
     let screenHeight = UIScreen.main.bounds.height
     
     var body: some View {
-        Text(self.timerViewModel.displayTimer())
+        Text(self.timerViewModel.timeLeftStr)
         .font(Font(UIFont.monospacedDigitSystemFont(ofSize: self.screenWidth * 0.3, weight: .bold)))
     }
 }
