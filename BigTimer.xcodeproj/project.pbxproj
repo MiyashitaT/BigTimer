@@ -32,11 +32,22 @@
 		6E929C752619E7A900660A30 /* SoundListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E929C742619E7A900660A30 /* SoundListView.swift */; };
 		6E929C7D2619EA6A00660A30 /* StartButtonCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E929C7C2619EA6A00660A30 /* StartButtonCountView.swift */; };
 		6E929C8B2619FE5C00660A30 /* SoundButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E929C8A2619FE5C00660A30 /* SoundButtonView.swift */; };
+		D8B7A233261A001800C2DAEB /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C717FA2619FD2000E4F10B /* TimerViewModel.swift */; };
+		D8B7A237261A002F00C2DAEB /* TimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C7179926199B3F00E4F10B /* TimeModel.swift */; };
+		D8B7A23B261A003200C2DAEB /* SoundModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C717B72619C1C400E4F10B /* SoundModel.swift */; };
+		D8B7A23F261A003500C2DAEB /* TimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C717AE2619A7E700E4F10B /* TimeFormat.swift */; };
+		D8B7A243261A003800C2DAEB /* SoundList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C717BD2619C38800E4F10B /* SoundList.swift */; };
+		D8B7A247261A003B00C2DAEB /* TimeStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C717A22619A38600E4F10B /* TimeStatus.swift */; };
 		D8C7176526198B2D00E4F10B /* BigTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C7176426198B2D00E4F10B /* BigTimerApp.swift */; };
 		D8C7176926198B3000E4F10B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8C7176826198B3000E4F10B /* Assets.xcassets */; };
 		D8C7176C26198B3000E4F10B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8C7176B26198B3000E4F10B /* Preview Assets.xcassets */; };
 		D8C7177726198B3000E4F10B /* BigTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C7177626198B3000E4F10B /* BigTimerTests.swift */; };
 		D8C7178226198B3000E4F10B /* BigTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C7178126198B3000E4F10B /* BigTimerUITests.swift */; };
+		D8C7179B26199B3F00E4F10B /* TimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C7179926199B3F00E4F10B /* TimeModel.swift */; };
+		D8C717A42619A38600E4F10B /* TimeStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C717A22619A38600E4F10B /* TimeStatus.swift */; };
+		D8C717B02619A7E700E4F10B /* TimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C717AE2619A7E700E4F10B /* TimeFormat.swift */; };
+		D8C717B92619C1C400E4F10B /* SoundModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C717B72619C1C400E4F10B /* SoundModel.swift */; };
+		D8C717BF2619C38800E4F10B /* SoundList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C717BD2619C38800E4F10B /* SoundList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +94,12 @@
 		D8C7177D26198B3000E4F10B /* BigTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BigTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8C7178126198B3000E4F10B /* BigTimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigTimerUITests.swift; sourceTree = "<group>"; };
 		D8C7178326198B3000E4F10B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8C7179926199B3F00E4F10B /* TimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeModel.swift; sourceTree = "<group>"; };
+		D8C717A22619A38600E4F10B /* TimeStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStatus.swift; sourceTree = "<group>"; };
+		D8C717AE2619A7E700E4F10B /* TimeFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormat.swift; sourceTree = "<group>"; };
+		D8C717B72619C1C400E4F10B /* SoundModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundModel.swift; sourceTree = "<group>"; };
+		D8C717BD2619C38800E4F10B /* SoundList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundList.swift; sourceTree = "<group>"; };
+		D8C717FA2619FD2000E4F10B /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,7 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				D8C7176426198B2D00E4F10B /* BigTimerApp.swift */,
-				D8C717952619974B00E4F10B /* ViewModel */,
+				D8C717FB2619FD2000E4F10B /* ViewModel */,
 				D8C717932619971D00E4F10B /* View */,
 				D8C71792261996FE00E4F10B /* Model */,
 				D8C7176826198B3000E4F10B /* Assets.xcassets */,
@@ -208,6 +225,11 @@
 		D8C71792261996FE00E4F10B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D8C7179926199B3F00E4F10B /* TimeModel.swift */,
+				D8C717B72619C1C400E4F10B /* SoundModel.swift */,
+				D8C717AE2619A7E700E4F10B /* TimeFormat.swift */,
+				D8C717BD2619C38800E4F10B /* SoundList.swift */,
+				D8C717A22619A38600E4F10B /* TimeStatus.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -223,12 +245,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		D8C717952619974B00E4F10B /* ViewModel */ = {
+		D8C717FB2619FD2000E4F10B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D8C717FA2619FD2000E4F10B /* TimerViewModel.swift */,
 			);
-			path = ViewModel;
-			sourceTree = "<group>";
+			name = ViewModel;
+			path = /Users/toriikatsuya/Desktop/kashiwa/BigTimer/BigTimer/ViewModel;
+			sourceTree = "<absolute>";
 		};
 /* End PBXGroup section */
 
@@ -382,8 +406,14 @@
 				6E929C702619AA2500660A30 /* SoundSelectView.swift in Sources */,
 				6E929C682619A9D600660A30 /* StartButtonView.swift in Sources */,
 				D8C7176526198B2D00E4F10B /* BigTimerApp.swift in Sources */,
+				D8B7A23F261A003500C2DAEB /* TimeFormat.swift in Sources */,
 				6E929C7D2619EA6A00660A30 /* StartButtonCountView.swift in Sources */,
+				D8B7A233261A001800C2DAEB /* TimerViewModel.swift in Sources */,
+				D8B7A23B261A003200C2DAEB /* SoundModel.swift in Sources */,
 				6E929C4B2619A12600660A30 /* TimeTextView.swift in Sources */,
+				D8B7A237261A002F00C2DAEB /* TimeModel.swift in Sources */,
+				D8B7A243261A003800C2DAEB /* SoundList.swift in Sources */,
+				D8B7A247261A003B00C2DAEB /* TimeStatus.swift in Sources */,
 				6E929C752619E7A900660A30 /* SoundListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,7 +422,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8C717BF2619C38800E4F10B /* SoundList.swift in Sources */,
 				D8C7177726198B3000E4F10B /* BigTimerTests.swift in Sources */,
+				D8C717A42619A38600E4F10B /* TimeStatus.swift in Sources */,
+				D8C717B92619C1C400E4F10B /* SoundModel.swift in Sources */,
+				D8C717B02619A7E700E4F10B /* TimeFormat.swift in Sources */,
+				D8C7179B26199B3F00E4F10B /* TimeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
