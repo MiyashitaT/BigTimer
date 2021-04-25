@@ -5,9 +5,6 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>DSEG7ClassicMini-Bold.ttf</string>
-		<string>LettersLaughingByQuantizedAndCalibrated-aaqm.ttf</string>
-		<string>digital.ttf</string>
-		<string>digitalism.ttf</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
