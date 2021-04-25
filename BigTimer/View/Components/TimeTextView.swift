@@ -14,7 +14,7 @@ struct TimeTextView: View {
     
     var body: some View {
         Text(self.timerViewModel.timeLeftStr)
-        .font(Font(UIFont.monospacedDigitSystemFont(ofSize: self.screenWidth * 0.3, weight: .bold)))
+            .font(.custom("DSEG7ClassicMini-Bold", size: self.screenWidth * 0.2))
     }
 }
 

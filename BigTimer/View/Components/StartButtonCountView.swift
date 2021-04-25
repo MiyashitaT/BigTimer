@@ -13,7 +13,7 @@ struct StartButtonCountView: View {
         Image(systemName: "play.circle")
             .resizable()
             .aspectRatio(contentMode: .fit)
-            .frame(width: 100, height: 100)
+            .frame(width: 120, height: 120)
             .onTapGesture {
                 timerViewModel.pushedButtun()
             }
