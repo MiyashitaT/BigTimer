@@ -15,6 +15,7 @@ class TimerViewModel: ObservableObject{
     @Published var minSelection = 0
     @Published var secSelection = 0
     @Published var timeLeftStr = ""
+    @Published var timeLeftStrNum = 0.0
     let soundModel = SoundModel()
     var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
@@ -39,10 +40,13 @@ class TimerViewModel: ObservableObject{
         switch timerModel.displayedTimeFormat {
             case .hr:
                 self.timeLeftStr = String(format: "%02d:%02d:%02d", hr, min, sec)
+                self.timeLeftStrNum = 5.4
             case .min:
                 self.timeLeftStr = String(format: "%02d:%02d", min, sec)
+                self.timeLeftStrNum = 3.5
             case .sec:
                 self.timeLeftStr = String(format: "%02d", sec)
+                self.timeLeftStrNum = 1.8
         }
     }
     
