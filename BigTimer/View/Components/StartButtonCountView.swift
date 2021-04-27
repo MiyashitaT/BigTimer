@@ -10,7 +10,7 @@ import SwiftUI
 struct StartButtonCountView: View {
     @EnvironmentObject var timerViewModel: TimerViewModel
     var body: some View {
-        Image(systemName: timerViewModel.isRunning ? "pause.circle" : "play.circle")
+        Image(systemName: timerViewModel.isRunning ? "play.circle" : "pause.circle")
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(width: 120, height: 120)
