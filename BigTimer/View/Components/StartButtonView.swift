@@ -15,7 +15,7 @@ struct StartButtonView: View {
             .aspectRatio(contentMode: .fit)
             .frame(width: 100, height: 100)
             .onTapGesture {
-                timerViewModel.pushedButtun()
+                timerViewModel.pushedButton()
             }
     }
 }

@@ -91,7 +91,7 @@ class TimerViewModel: ObservableObject{
         timerModel.timeLeft = 0
     }
     
-    func pushedButtun(){
+    func pushedButton(){
         if timerModel.timerStatus == .ready {
             self.setTimer()
             self.setTimeLeftStr()
@@ -106,11 +106,10 @@ class TimerViewModel: ObservableObject{
         }
     }
     
-    func pushedBackButtun(){
+    func pushedBackButton(){
         self.reset()
         self.switchIsTimer()
         self.switchIsRunning()
-        print(timerModel.timerStatus)
     }
     
     func switchIsRunning(){

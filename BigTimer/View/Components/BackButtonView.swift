@@ -15,7 +15,7 @@ struct BackButtonView: View {
             .aspectRatio(contentMode: .fit)
             .frame(width: 40, height: 40)
             .onTapGesture {
-                timerViewModel.pushedBackButtun()
+                timerViewModel.pushedBackButton()
         }
     }
 }
