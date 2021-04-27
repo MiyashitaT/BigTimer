@@ -104,4 +104,11 @@ class TimerViewModel: ObservableObject{
             isRunning = true
         }
     }
+    func pushedBackButtun(){
+        if timerModel.timerStatus == .pause || timerModel.timerStatus == .running {
+            self.setTimer()
+            isRunning = false
+            isTimer = false
+        }
+    }
 }
