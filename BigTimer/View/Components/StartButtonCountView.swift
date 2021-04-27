@@ -16,7 +16,7 @@ struct StartButtonCountView: View {
             .frame(width: 120, height: 120)
             .onTapGesture {
                 timerViewModel.pushedButtun()
-        }
+            }
     }
 }
 
