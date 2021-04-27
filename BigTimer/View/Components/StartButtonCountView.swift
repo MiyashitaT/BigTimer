@@ -10,12 +10,12 @@ import SwiftUI
 struct StartButtonCountView: View {
     @EnvironmentObject var timerViewModel: TimerViewModel
     var body: some View {
-        Image(systemName: "play.circle")
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .frame(width: 120, height: 120)
-            .onTapGesture {
-                timerViewModel.pushedButtun()
+            Image(systemName: timerViewModel.isRunning ? "pause.circle" : "play.circle")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 120, height: 120)
+                .onTapGesture {
+                    timerViewModel.pushedButtun()
             }
     }
 }

@@ -11,6 +11,8 @@ import AudioToolbox
 
 class TimerViewModel: ObservableObject{
     var timerModel = TimerModel()
+    @Published var isTimer = false
+    @Published var isRunning = false
     @Published var hourSelection = 0
     @Published var minSelection = 0
     @Published var secSelection = 0
@@ -95,16 +97,11 @@ class TimerViewModel: ObservableObject{
         }
         if self.timerModel.timeLeft != 0 && self.timerModel.timerStatus != .running {
             self.start()
+            isRunning = false
+            isTimer = true
         } else if self.timerModel.timerStatus == .running {
             self.pause()
-        }
-    }
-    
-    func isTimer() -> Bool{
-        if timerModel.timerStatus == .ready {
-            return false
-        } else{
-            return true
+            isRunning = true
         }
     }
 }

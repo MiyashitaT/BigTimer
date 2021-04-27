@@ -25,7 +25,7 @@ struct TimeCountView: View {
                 Spacer()
             }
             VStack{
-                if timerViewModel.isTimer(){
+                if timerViewModel.isTimer{
                     TimeTextView()
                 } else {
                     PickerView()
@@ -33,7 +33,11 @@ struct TimeCountView: View {
             }
             VStack{
                 Spacer()
-                StartButtonCountView()
+                if timerViewModel.isTimer{
+                    StartButtonCountView()
+                } else {
+                    StartButtonView()
+                }
             }
         }
         .onReceive(timerViewModel.timer) { _ in
