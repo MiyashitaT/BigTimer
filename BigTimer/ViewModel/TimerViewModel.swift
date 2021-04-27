@@ -15,7 +15,7 @@ class TimerViewModel: ObservableObject{
     @Published var minSelection = 0
     @Published var secSelection = 0
     @Published var timeLeftStr = ""
-    @Published var timeLeftStrNum = 0.0
+    var timeLeftStrNum = 0.0
     let soundModel = SoundModel()
     var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
