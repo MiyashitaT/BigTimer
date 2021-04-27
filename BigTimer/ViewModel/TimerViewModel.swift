@@ -17,15 +17,17 @@ class TimerViewModel: ObservableObject{
     @Published var timeLeftStr = ""
     var timeLeftStrNum = 0.0
     let soundModel = SoundModel()
+    let hourSec = 3600
+    let minSec = 60
     var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     func setTimer(){
-        timerModel.setTime = Double(hourSelection * 3600 + minSelection * 60 + secSelection)
+        timerModel.setTime = Double(hourSelection * hourSec + minSelection * minSec + secSelection)
         timerModel.timeLeft = timerModel.setTime
         
-        if timerModel.timeLeft < 60 {
+        if timerModel.timeLeft < Double(minSec) {
             timerModel.displayedTimeFormat = .sec
-        } else if timerModel.timeLeft < 3600 {
+        } else if timerModel.timeLeft < Double(hourSec) {
             timerModel.displayedTimeFormat = .min
         } else {
             timerModel.displayedTimeFormat = .hr
@@ -33,9 +35,9 @@ class TimerViewModel: ObservableObject{
     }
     
     func setTimeLeftStr(){
-        let hr = Int(timerModel.timeLeft) / 3600
-        let min = Int(timerModel.timeLeft) % 3600 / 60
-        let sec = Int(timerModel.timeLeft) % 3600 % 60
+        let hr = Int(timerModel.timeLeft) / hourSec
+        let min = Int(timerModel.timeLeft) % hourSec / minSec
+        let sec = Int(timerModel.timeLeft) % hourSec % minSec
 
         switch timerModel.displayedTimeFormat {
             case .hr:
