@@ -12,5 +12,4 @@ class TimerModel: ObservableObject{
     var setTime: Double = 0
     var timeLeft: Double = 0
     var timerStatus: TimerStatus = .ready
-    var isSetting: Bool = false
 }
