@@ -94,6 +94,7 @@ class TimerViewModel: ObservableObject{
     func pushedButtun(){
         if timerModel.timerStatus == .ready {
             self.setTimer()
+            self.setTimeLeftStr()
         }
         if self.timerModel.timeLeft != 0 && self.timerModel.timerStatus != .running {
             self.start()
