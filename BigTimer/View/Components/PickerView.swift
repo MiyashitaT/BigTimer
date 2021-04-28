@@ -9,15 +9,15 @@ import SwiftUI
 
 struct PickerView: View {
     @EnvironmentObject var timerViewModel: TimerViewModel
-
+    
     let screenWidth = UIScreen.main.bounds.width
-
+    
     let screenHeight = UIScreen.main.bounds.height
-
+    
     var hours = [Int](0..<24)
-
+    
     var minutes = [Int](0..<60)
-
+    
     var seconds = [Int](0..<60)
     
     var body: some View {

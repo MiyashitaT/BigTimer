@@ -40,17 +40,17 @@ class TimerViewModel: ObservableObject{
         let hr = Int(timerModel.timeLeft) / hourSec
         let min = Int(timerModel.timeLeft) % hourSec / minSec
         let sec = Int(timerModel.timeLeft) % hourSec % minSec
-
+        
         switch timerModel.displayedTimeFormat {
-            case .hr:
-                self.timeLeftStr = String(format: "%02d:%02d:%02d", hr, min, sec)
-                self.timeLeftStrNum = 5.4
-            case .min:
-                self.timeLeftStr = String(format: "%02d:%02d", min, sec)
-                self.timeLeftStrNum = 3.5
-            case .sec:
-                self.timeLeftStr = String(format: "%02d", sec)
-                self.timeLeftStrNum = 1.8
+        case .hr:
+            self.timeLeftStr = String(format: "%02d:%02d:%02d", hr, min, sec)
+            self.timeLeftStrNum = 5.4
+        case .min:
+            self.timeLeftStr = String(format: "%02d:%02d", min, sec)
+            self.timeLeftStrNum = 3.5
+        case .sec:
+            self.timeLeftStr = String(format: "%02d", sec)
+            self.timeLeftStrNum = 1.8
         }
     }
     

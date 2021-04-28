@@ -10,13 +10,13 @@ import SwiftUI
 struct SoundSelectView: View {
     var body: some View {
         NavigationLink(destination: SoundListView()) {
-                    HStack {
-                        //設定項目名
-                        Text("アラーム音")
-                        Spacer()
-                        //現在選択中のアラーム音
-                        Text("hoge")
-                    }
+            HStack {
+                //設定項目名
+                Text("アラーム音")
+                Spacer()
+                //現在選択中のアラーム音
+                Text("hoge")
+            }
         }
     }
 }
