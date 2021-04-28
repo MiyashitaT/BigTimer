@@ -98,11 +98,10 @@ class TimerViewModel: ObservableObject{
         }
         if self.timerModel.timeLeft != 0 && self.timerModel.timerStatus != .running {
             self.start()
-            self.switchStatus()
         } else if self.timerModel.timerStatus == .running {
             self.pause()
-            self.switchStatus()
         }
+        self.switchStatus()
     }
     
     func pushedBackButton(){
@@ -111,17 +110,22 @@ class TimerViewModel: ObservableObject{
     }
     
     func switchStatus(){
+        self.switchIsTimer()
+        self.switchIsRunning()
+    }
+    
+    func switchIsRunning(){
         if timerModel.timerStatus == .running {
             isRunning = true
-            isTimer = true
+        } else {
+            isRunning = false
         }
-        else if timerModel.timerStatus == .ready {
+    }
+    func switchIsTimer(){
+        if timerModel.timerStatus == .ready {
             isTimer = false
-            isRunning = false
-        }
-        else {
+        } else {
             isTimer = true
-            isRunning = false
         }
     }
 }
