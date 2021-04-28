@@ -8,11 +8,15 @@
 import SwiftUI
 
 struct BackButtonView: View {
+    @EnvironmentObject var timerViewModel: TimerViewModel
     var body: some View {
         Image(systemName: "arrow.backward")
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(width: 40, height: 40)
+            .onTapGesture {
+                timerViewModel.pushedBackButton()
+        }
     }
 }
 
