@@ -9,8 +9,8 @@ import Foundation
 import AudioToolbox 
 
 class SoundModel: ObservableObject{
-    @Published var isVibrationOn: Bool = true
-    @Published var isAlarmOn: Bool = true
-    @Published var soundID: SystemSoundID = 1151
-    @Published var soundName: String = "Beat"
+    var isVibrationOn: Bool = true
+    var isAlarmOn: Bool = true
+    var soundID: SystemSoundID = 1151
+    var soundName: String = "Beat"
 }

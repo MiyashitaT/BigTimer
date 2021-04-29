@@ -17,17 +17,19 @@ class TimerViewModel: ObservableObject{
     @Published var minSelection = 0
     @Published var secSelection = 0
     @Published var timeLeftStr = ""
-    @Published var timeLeftStrNum = 0.0
+    var timeLeftStrNum = 0.0
     let soundModel = SoundModel()
+    let hourSec = 3600
+    let minSec = 60
     var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     func setTimer(){
-        timerModel.setTime = Double(hourSelection * 3600 + minSelection * 60 + secSelection)
+        timerModel.setTime = Double(hourSelection * hourSec + minSelection * minSec + secSelection)
         timerModel.timeLeft = timerModel.setTime
         
-        if timerModel.timeLeft < 60 {
+        if timerModel.timeLeft < Double(minSec) {
             timerModel.displayedTimeFormat = .sec
-        } else if timerModel.timeLeft < 3600 {
+        } else if timerModel.timeLeft < Double(hourSec) {
             timerModel.displayedTimeFormat = .min
         } else {
             timerModel.displayedTimeFormat = .hr
@@ -35,20 +37,20 @@ class TimerViewModel: ObservableObject{
     }
     
     func setTimeLeftStr(){
-        let hr = Int(timerModel.timeLeft) / 3600
-        let min = Int(timerModel.timeLeft) % 3600 / 60
-        let sec = Int(timerModel.timeLeft) % 3600 % 60
-
+        let hr = Int(timerModel.timeLeft) / hourSec
+        let min = Int(timerModel.timeLeft) % hourSec / minSec
+        let sec = Int(timerModel.timeLeft) % hourSec % minSec
+        
         switch timerModel.displayedTimeFormat {
-            case .hr:
-                self.timeLeftStr = String(format: "%02d:%02d:%02d", hr, min, sec)
-                self.timeLeftStrNum = 5.4
-            case .min:
-                self.timeLeftStr = String(format: "%02d:%02d", min, sec)
-                self.timeLeftStrNum = 3.5
-            case .sec:
-                self.timeLeftStr = String(format: "%02d", sec)
-                self.timeLeftStrNum = 1.8
+        case .hr:
+            self.timeLeftStr = String(format: "%02d:%02d:%02d", hr, min, sec)
+            self.timeLeftStrNum = 5.4
+        case .min:
+            self.timeLeftStr = String(format: "%02d:%02d", min, sec)
+            self.timeLeftStrNum = 3.5
+        case .sec:
+            self.timeLeftStr = String(format: "%02d", sec)
+            self.timeLeftStrNum = 1.8
         }
     }
     

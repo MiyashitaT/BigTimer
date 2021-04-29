@@ -23,16 +23,16 @@ struct TimeSettingView: View {
                 }
                 Spacer()
             }
-
+            
             VStack{
                 PickerView()
                 StartButtonView()
-                .padding(EdgeInsets(
-                    top: 50,
-                    leading: 30,
-                    bottom: 30,
-                    trailing: 30
-                ))
+                    .padding(EdgeInsets(
+                        top: 50,
+                        leading: 30,
+                        bottom: 30,
+                        trailing: 30
+                    ))
             }
         }
     }

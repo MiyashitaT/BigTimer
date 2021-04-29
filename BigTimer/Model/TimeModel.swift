@@ -8,9 +8,8 @@
 import Foundation
 
 class TimerModel: ObservableObject{
-    @Published var displayedTimeFormat: TimeFormat = .min
-    @Published var setTime: Double = 0
-    @Published var timeLeft: Double = 0
-    @Published var timerStatus: TimerStatus = .ready
-    @Published var isSetting: Bool = false
+    var displayedTimeFormat: TimeFormat = .min
+    var setTime: Double = 0
+    var timeLeft: Double = 0
+    var timerStatus: TimerStatus = .ready
 }
