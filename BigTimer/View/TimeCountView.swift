@@ -13,14 +13,23 @@ struct TimeCountView: View {
         ZStack{
             VStack{
                 HStack{
-                    BackButtonView()
-                        .padding(EdgeInsets(
-                            top: 20,        
-                            leading: 20,
-                            bottom: 0,
-                            trailing: 0
-                        ))
+                    if timerViewModel.isTimer{
+                        BackButtonView()
+                            .padding(EdgeInsets(
+                                top: 20,
+                                leading: 20,
+                                bottom: 0,
+                                trailing: 0
+                            ))
+                    }
                     Spacer()
+                    SoundButtonView()
+                        .padding(EdgeInsets(
+                            top: 20,
+                            leading: 0,
+                            bottom: 0,
+                            trailing: 20
+                        ))
                 }
                 Spacer()
             }

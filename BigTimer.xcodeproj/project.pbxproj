@@ -7,18 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6E7EDD7B262D0038003E3CE5 /* digitalism.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7EDD7A262D0038003E3CE5 /* digitalism.ttf */; };
-		6E7EDD7C262D0038003E3CE5 /* digitalism.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7EDD7A262D0038003E3CE5 /* digitalism.ttf */; };
-		6E7EDD7D262D0038003E3CE5 /* digitalism.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7EDD7A262D0038003E3CE5 /* digitalism.ttf */; };
-		6E7EDD85262D041F003E3CE5 /* digital.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7EDD84262D041F003E3CE5 /* digital.ttf */; };
-		6E7EDD86262D041F003E3CE5 /* digital.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7EDD84262D041F003E3CE5 /* digital.ttf */; };
-		6E7EDD87262D041F003E3CE5 /* digital.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7EDD84262D041F003E3CE5 /* digital.ttf */; };
-		6E7EDD92262D05C0003E3CE5 /* LettersLaughingByQuantizedAndCalibrated-aaqm.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7EDD91262D05C0003E3CE5 /* LettersLaughingByQuantizedAndCalibrated-aaqm.ttf */; };
-		6E7EDD93262D05C0003E3CE5 /* LettersLaughingByQuantizedAndCalibrated-aaqm.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7EDD91262D05C0003E3CE5 /* LettersLaughingByQuantizedAndCalibrated-aaqm.ttf */; };
-		6E7EDD94262D05C0003E3CE5 /* LettersLaughingByQuantizedAndCalibrated-aaqm.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7EDD91262D05C0003E3CE5 /* LettersLaughingByQuantizedAndCalibrated-aaqm.ttf */; };
-		6E7EDD9C262D0829003E3CE5 /* DSEG7ClassicMini-Bold.woff in Resources */ = {isa = PBXBuildFile; fileRef = 6E7EDD9B262D0829003E3CE5 /* DSEG7ClassicMini-Bold.woff */; };
-		6E7EDD9D262D0829003E3CE5 /* DSEG7ClassicMini-Bold.woff in Resources */ = {isa = PBXBuildFile; fileRef = 6E7EDD9B262D0829003E3CE5 /* DSEG7ClassicMini-Bold.woff */; };
-		6E7EDD9E262D0829003E3CE5 /* DSEG7ClassicMini-Bold.woff in Resources */ = {isa = PBXBuildFile; fileRef = 6E7EDD9B262D0829003E3CE5 /* DSEG7ClassicMini-Bold.woff */; };
+		6E7EDD7B262D0038003E3CE5 /* (null) in Resources */ = {isa = PBXBuildFile; };
+		6E7EDD7C262D0038003E3CE5 /* (null) in Resources */ = {isa = PBXBuildFile; };
+		6E7EDD7D262D0038003E3CE5 /* (null) in Resources */ = {isa = PBXBuildFile; };
+		6E7EDD85262D041F003E3CE5 /* (null) in Resources */ = {isa = PBXBuildFile; };
+		6E7EDD86262D041F003E3CE5 /* (null) in Resources */ = {isa = PBXBuildFile; };
+		6E7EDD87262D041F003E3CE5 /* (null) in Resources */ = {isa = PBXBuildFile; };
+		6E7EDD92262D05C0003E3CE5 /* (null) in Resources */ = {isa = PBXBuildFile; };
+		6E7EDD93262D05C0003E3CE5 /* (null) in Resources */ = {isa = PBXBuildFile; };
+		6E7EDD94262D05C0003E3CE5 /* (null) in Resources */ = {isa = PBXBuildFile; };
+		6E7EDD9C262D0829003E3CE5 /* (null) in Resources */ = {isa = PBXBuildFile; };
+		6E7EDD9D262D0829003E3CE5 /* (null) in Resources */ = {isa = PBXBuildFile; };
+		6E7EDD9E262D0829003E3CE5 /* (null) in Resources */ = {isa = PBXBuildFile; };
 		6E7EDDA6262D083F003E3CE5 /* DSEG7ClassicMini-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7EDDA5262D083F003E3CE5 /* DSEG7ClassicMini-Bold.ttf */; };
 		6E7EDDA7262D083F003E3CE5 /* DSEG7ClassicMini-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7EDDA5262D083F003E3CE5 /* DSEG7ClassicMini-Bold.ttf */; };
 		6E7EDDA8262D083F003E3CE5 /* DSEG7ClassicMini-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7EDDA5262D083F003E3CE5 /* DSEG7ClassicMini-Bold.ttf */; };
@@ -134,11 +134,7 @@
 		6E7EDD79262D0019003E3CE5 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				6E7EDD91262D05C0003E3CE5 /* LettersLaughingByQuantizedAndCalibrated-aaqm.ttf */,
-				6E7EDD9B262D0829003E3CE5 /* DSEG7ClassicMini-Bold.woff */,
 				6E7EDDA5262D083F003E3CE5 /* DSEG7ClassicMini-Bold.ttf */,
-				6E7EDD84262D041F003E3CE5 /* digital.ttf */,
-				6E7EDD7A262D0038003E3CE5 /* digitalism.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -352,10 +348,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E7EDD92262D05C0003E3CE5 /* LettersLaughingByQuantizedAndCalibrated-aaqm.ttf in Resources */,
-				6E7EDD9C262D0829003E3CE5 /* DSEG7ClassicMini-Bold.woff in Resources */,
-				6E7EDD85262D041F003E3CE5 /* digital.ttf in Resources */,
-				6E7EDD7B262D0038003E3CE5 /* digitalism.ttf in Resources */,
+				6E7EDD92262D05C0003E3CE5 /* (null) in Resources */,
+				6E7EDD9C262D0829003E3CE5 /* (null) in Resources */,
+				6E7EDD85262D041F003E3CE5 /* (null) in Resources */,
+				6E7EDD7B262D0038003E3CE5 /* (null) in Resources */,
 				D8C7176C26198B3000E4F10B /* Preview Assets.xcassets in Resources */,
 				6E7EDDA6262D083F003E3CE5 /* DSEG7ClassicMini-Bold.ttf in Resources */,
 				D8C7176926198B3000E4F10B /* Assets.xcassets in Resources */,
@@ -366,11 +362,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E7EDD86262D041F003E3CE5 /* digital.ttf in Resources */,
-				6E7EDD9D262D0829003E3CE5 /* DSEG7ClassicMini-Bold.woff in Resources */,
+				6E7EDD86262D041F003E3CE5 /* (null) in Resources */,
+				6E7EDD9D262D0829003E3CE5 /* (null) in Resources */,
 				6E7EDDA7262D083F003E3CE5 /* DSEG7ClassicMini-Bold.ttf in Resources */,
-				6E7EDD7C262D0038003E3CE5 /* digitalism.ttf in Resources */,
-				6E7EDD93262D05C0003E3CE5 /* LettersLaughingByQuantizedAndCalibrated-aaqm.ttf in Resources */,
+				6E7EDD7C262D0038003E3CE5 /* (null) in Resources */,
+				6E7EDD93262D05C0003E3CE5 /* (null) in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,11 +374,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E7EDD87262D041F003E3CE5 /* digital.ttf in Resources */,
-				6E7EDD9E262D0829003E3CE5 /* DSEG7ClassicMini-Bold.woff in Resources */,
+				6E7EDD87262D041F003E3CE5 /* (null) in Resources */,
+				6E7EDD9E262D0829003E3CE5 /* (null) in Resources */,
 				6E7EDDA8262D083F003E3CE5 /* DSEG7ClassicMini-Bold.ttf in Resources */,
-				6E7EDD7D262D0038003E3CE5 /* digitalism.ttf in Resources */,
-				6E7EDD94262D05C0003E3CE5 /* LettersLaughingByQuantizedAndCalibrated-aaqm.ttf in Resources */,
+				6E7EDD7D262D0038003E3CE5 /* (null) in Resources */,
+				6E7EDD94262D05C0003E3CE5 /* (null) in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
