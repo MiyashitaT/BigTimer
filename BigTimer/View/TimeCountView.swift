@@ -12,6 +12,14 @@ struct TimeCountView: View {
     var body: some View {
         ZStack{
             VStack{
+                Spacer()
+                if timerViewModel.isTimer{
+                    ScreenButtonView()
+                } else {
+                    StartButtonView()
+                }
+            }
+            VStack{
                 HStack{
                     BackButtonView()
                         .padding(EdgeInsets(
@@ -29,14 +37,6 @@ struct TimeCountView: View {
                     TimeTextView()
                 } else {
                     PickerView()
-                }
-            }
-            VStack{
-                Spacer()
-                if timerViewModel.isTimer{
-                    StartButtonCountView()
-                } else {
-                    StartButtonView()
                 }
             }
         }
