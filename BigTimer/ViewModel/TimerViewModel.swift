@@ -29,10 +29,14 @@ class TimerViewModel: ObservableObject{
         
         if timerModel.timeLeft < Double(minSec) {
             timerModel.displayedTimeFormat = .sec
+        } else if timerModel.timeLeft < Double(minSec * 10) {
+            timerModel.displayedTimeFormat = .min1
         } else if timerModel.timeLeft < Double(hourSec) {
-            timerModel.displayedTimeFormat = .min
+            timerModel.displayedTimeFormat = .min2
+        } else if timerModel.timeLeft < Double(hourSec * 10) {
+            timerModel.displayedTimeFormat = .hr1
         } else {
-            timerModel.displayedTimeFormat = .hr
+            timerModel.displayedTimeFormat = .hr2
         }
     }
     
@@ -42,12 +46,18 @@ class TimerViewModel: ObservableObject{
         let sec = Int(timerModel.timeLeft) % hourSec % minSec
         
         switch timerModel.displayedTimeFormat {
-        case .hr:
+        case .hr2:
             self.timeLeftStr = String(format: "%02d:%02d:%02d", hr, min, sec)
             self.timeLeftStrNum = 5.4
-        case .min:
+        case .hr1:
+            self.timeLeftStr = String(format: "%01d:%02d:%02d", hr, min, sec)
+            self.timeLeftStrNum = 4.5
+        case .min2:
             self.timeLeftStr = String(format: "%02d:%02d", min, sec)
             self.timeLeftStrNum = 3.5
+        case .min1:
+            self.timeLeftStr = String(format: "%01d:%02d", min, sec)
+            self.timeLeftStrNum = 2.7
         case .sec:
             self.timeLeftStr = String(format: "%02d", sec)
             self.timeLeftStrNum = 1.8

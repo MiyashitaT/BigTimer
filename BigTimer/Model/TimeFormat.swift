@@ -8,7 +8,9 @@
 import Foundation
 
 enum TimeFormat {
-    case hr
-    case min
+    case hr1
+    case hr2
+    case min1
+    case min2
     case sec
 }
