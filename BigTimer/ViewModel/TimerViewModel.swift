@@ -17,6 +17,7 @@ class TimerViewModel: ObservableObject{
     @Published var minSelection = 0
     @Published var secSelection = 0
     @Published var timeLeftStr = ""
+    @Published var alermOn = true
     var timeLeftStrNum = 0.0
     let soundModel = SoundModel()
     let hourSec = 3600
@@ -129,5 +130,10 @@ class TimerViewModel: ObservableObject{
         } else {
             isTimer = true
         }
+    }
+    
+    func switchSoundStatus() {
+        soundModel.isAlarmOn.toggle()
+        alermOn = soundModel.isAlarmOn
     }
 }
