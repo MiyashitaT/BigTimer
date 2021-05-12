@@ -13,6 +13,7 @@ class TimerViewModel: ObservableObject{
     var timerModel = TimerModel()
     @Published var isTimer = false
     @Published var isRunning = false
+    @Published var isStopping = false
     @Published var hourSelection = 0
     @Published var minSelection = 0
     @Published var secSelection = 0
@@ -72,6 +73,7 @@ class TimerViewModel: ObservableObject{
             self.setTimeLeftStr()
         } else {
             self.timerModel.timerStatus = .stopping
+            self.isStopping = true
             if self.soundModel.isAlarmOn{
                 AudioServicesPlayAlertSoundWithCompletion(self.soundModel.soundID, nil)
             }
@@ -79,13 +81,17 @@ class TimerViewModel: ObservableObject{
             if self.soundModel.isVibrationOn{
                 AudioServicesPlayAlertSoundWithCompletion(SystemSoundID(kSystemSoundID_Vibrate)) {}
             }
-            //2.5秒経過したらstoppedに
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+            // 1.0秒経過したらstoppedに
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 self.timerModel.timeLeft = self.timerModel.setTime
                 //途中で停止押されて.readyになっている場合を排除
                 if self.timerModel.timerStatus == .stopping {
                     self.timerModel.timerStatus = .stopped
                 }
+                self.isStopping = false
+                self.setTimer()
+                self.setTimeLeftStr()
+                self.timerModel.timerStatus = .ready
             }
         }
     }
