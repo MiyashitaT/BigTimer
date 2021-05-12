@@ -64,6 +64,15 @@ class TimerViewModel: ObservableObject{
         }
     }
     
+    func calcTimeSize(height: CGFloat, width: CGFloat) -> CGFloat{
+        let width_size = width / CGFloat(self.timeLeftStrNum)
+        if width_size < height{
+            return width_size
+        } else{
+            return height
+        }
+    }
+    
     func run(){
         guard self.timerModel.timerStatus == .running else { return }
         
