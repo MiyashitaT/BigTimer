@@ -14,8 +14,12 @@ struct TimeTextView: View {
         GeometryReader{geometry in
             VStack{
                 Spacer()
-                Text(self.timerViewModel.timeLeftStr)
-                    .font(.custom("DSEG7ClassicMini-Bold", size: geometry.size.width / CGFloat(timerViewModel.timeLeftStrNum)))
+                HStack{
+                    Spacer()
+                    Text(self.timerViewModel.timeLeftStr)
+                        .font(.custom("DSEG7ClassicMini-Bold", size: timerViewModel.calcTimeSize(height: geometry.size.height, width: geometry.size.width)))
+                    Spacer()
+                }
                 Spacer()
             }
         }

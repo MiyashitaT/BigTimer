@@ -49,19 +49,28 @@ class TimerViewModel: ObservableObject{
         switch timerModel.displayedTimeFormat {
         case .hr2:
             self.timeLeftStr = String(format: "%02d:%02d:%02d", hr, min, sec)
-            self.timeLeftStrNum = 5.4
+            self.timeLeftStrNum = 5.5
         case .hr1:
             self.timeLeftStr = String(format: "%01d:%02d:%02d", hr, min, sec)
-            self.timeLeftStrNum = 4.5
+            self.timeLeftStrNum = 4.6
         case .min2:
             self.timeLeftStr = String(format: "%02d:%02d", min, sec)
-            self.timeLeftStrNum = 3.5
+            self.timeLeftStrNum = 3.6
         case .min1:
             self.timeLeftStr = String(format: "%01d:%02d", min, sec)
-            self.timeLeftStrNum = 2.7
+            self.timeLeftStrNum = 2.8
         case .sec:
             self.timeLeftStr = String(format: "%02d", sec)
             self.timeLeftStrNum = 1.8
+        }
+    }
+    
+    func calcTimeSize(height: CGFloat, width: CGFloat) -> CGFloat{
+        let width_size = width / CGFloat(self.timeLeftStrNum)
+        if width_size < height{
+            return width_size
+        } else{
+            return height
         }
     }
     
