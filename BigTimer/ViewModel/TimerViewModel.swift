@@ -68,12 +68,10 @@ class TimerViewModel: ObservableObject{
     func run(){
         guard self.timerModel.timerStatus == .running else { return }
         
-        if self.timerModel.timeLeft > 1 {
+        if self.timerModel.timeLeft > 0 {
             self.timerModel.timeLeft -= 1
             self.setTimeLeftStr()
         } else {
-            self.timerModel.timeLeft -= 1
-            self.setTimeLeftStr()
             self.timerModel.timerStatus = .stopping
             self.isStopping = true
             if self.soundModel.isAlarmOn{
