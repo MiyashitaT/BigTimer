@@ -18,6 +18,7 @@ class TimerViewModel: ObservableObject{
     @Published var minSelection = 0
     @Published var secSelection = 0
     @Published var timeLeftStr = ""
+    @Published var alermOn = true
     var timeLeftStrNum = 0.0
     let soundModel = SoundModel()
     let hourSec = 3600
@@ -49,19 +50,28 @@ class TimerViewModel: ObservableObject{
         switch timerModel.displayedTimeFormat {
         case .hr2:
             self.timeLeftStr = String(format: "%02d:%02d:%02d", hr, min, sec)
-            self.timeLeftStrNum = 5.4
+            self.timeLeftStrNum = 5.5
         case .hr1:
             self.timeLeftStr = String(format: "%01d:%02d:%02d", hr, min, sec)
-            self.timeLeftStrNum = 4.5
+            self.timeLeftStrNum = 4.6
         case .min2:
             self.timeLeftStr = String(format: "%02d:%02d", min, sec)
-            self.timeLeftStrNum = 3.5
+            self.timeLeftStrNum = 3.6
         case .min1:
             self.timeLeftStr = String(format: "%01d:%02d", min, sec)
-            self.timeLeftStrNum = 2.7
+            self.timeLeftStrNum = 2.8
         case .sec:
             self.timeLeftStr = String(format: "%02d", sec)
             self.timeLeftStrNum = 1.8
+        }
+    }
+    
+    func calcTimeSize(height: CGFloat, width: CGFloat) -> CGFloat{
+        let width_size = width / CGFloat(self.timeLeftStrNum)
+        if width_size < height{
+            return width_size
+        } else{
+            return height
         }
     }
     
@@ -145,5 +155,10 @@ class TimerViewModel: ObservableObject{
         } else {
             isTimer = true
         }
+    }
+    
+    func switchSoundStatus() {
+        soundModel.isAlarmOn.toggle()
+        alermOn = soundModel.isAlarmOn
     }
 }

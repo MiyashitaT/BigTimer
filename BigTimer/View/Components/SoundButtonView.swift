@@ -8,19 +8,15 @@
 import SwiftUI
 
 struct SoundButtonView: View {
-    let soundOn = true
+    @EnvironmentObject var timerViewModel: TimerViewModel
     var body: some View {
-        if soundOn{
-            Image(systemName: "speaker.wave.2.fill")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 40, height: 40)
-        } else {
-            Image(systemName: "speaker.slash.fill")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 40, height: 40)
-        }
+        Image(systemName: timerViewModel.alermOn ? "speaker.wave.2.fill": "speaker.slash.fill")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 40, height: 40)
+            .onTapGesture {
+                timerViewModel.switchSoundStatus()
+            }
     }
 }
 
