@@ -23,19 +23,20 @@ class TimerViewModel: ObservableObject{
     let soundModel = SoundModel()
     let hourSec = 3600
     let minSec = 60
-    var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    let timeResolution = 10
+    var timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
     
     func setTimer(){
-        timerModel.setTime = Double(hourSelection * hourSec + minSelection * minSec + secSelection)
-        timerModel.timeLeft = timerModel.setTime
+        timerModel.setTime = hourSelection * hourSec + minSelection * minSec + secSelection
+        timerModel.timeLeft = timerModel.setTime * timeResolution
         
-        if timerModel.timeLeft < Double(minSec) {
+        if timerModel.setTime < minSec {
             timerModel.displayedTimeFormat = .sec
-        } else if timerModel.timeLeft < Double(minSec * 10) {
+        } else if timerModel.setTime < minSec * 10 {
             timerModel.displayedTimeFormat = .min1
-        } else if timerModel.timeLeft < Double(hourSec) {
+        } else if timerModel.setTime < hourSec {
             timerModel.displayedTimeFormat = .min2
-        } else if timerModel.timeLeft < Double(hourSec * 10) {
+        } else if timerModel.setTime < hourSec * 10 {
             timerModel.displayedTimeFormat = .hr1
         } else {
             timerModel.displayedTimeFormat = .hr2
@@ -43,9 +44,9 @@ class TimerViewModel: ObservableObject{
     }
     
     func setTimeLeftStr(){
-        let hr = Int(timerModel.timeLeft) / hourSec
-        let min = Int(timerModel.timeLeft) % hourSec / minSec
-        let sec = Int(timerModel.timeLeft) % hourSec % minSec
+        let hr = timerModel.timeLeft / timeResolution / hourSec
+        let min = timerModel.timeLeft / timeResolution % hourSec / minSec
+        let sec = timerModel.timeLeft / timeResolution % hourSec % minSec
         
         switch timerModel.displayedTimeFormat {
         case .hr2:
