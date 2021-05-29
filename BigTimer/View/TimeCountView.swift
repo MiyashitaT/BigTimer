@@ -12,6 +12,13 @@ struct TimeCountView: View {
     var body: some View {
         ZStack{
             VStack{
+                if timerViewModel.isTimer{
+                    TimeTextView()
+                } else {
+                    PickerView()
+                }
+            }
+            VStack{
                 Spacer()
                 if timerViewModel.isTimer{
                     ScreenButtonView()
@@ -40,13 +47,6 @@ struct TimeCountView: View {
                         ))
                 }
                 Spacer()
-            }
-            VStack{
-                if timerViewModel.isTimer{
-                    TimeTextView()
-                } else {
-                    PickerView()
-                }
             }
         }
         .onReceive(timerViewModel.timer) { _ in
