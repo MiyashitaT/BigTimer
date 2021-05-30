@@ -19,6 +19,8 @@ class TimerViewModel: ObservableObject{
     @Published var secSelection = 0
     @Published var timeLeftStr = ""
     @Published var alermOn = true
+    @Published var aflag = true
+    @Published var bflag = false
     var timeLeftStrNum = 0.0
     let soundModel = SoundModel()
     let hourSec = 3600
@@ -114,6 +116,8 @@ class TimerViewModel: ObservableObject{
                 self.setTimer()
                 self.setTimeLeftStr()
                 self.timerModel.timerStatus = .ready
+                self.aflag = false
+                self.bflag = true
             }
         }
     }
@@ -136,7 +140,7 @@ class TimerViewModel: ObservableObject{
             self.setTimer()
             self.setTimeLeftStr()
         }
-        if self.timerModel.timeLeft != 0 && self.timerModel.timerStatus != .running {
+        if self.timerModel.timerStatus == .ready || self.timerModel.timerStatus == .stopped || self.timerModel.timerStatus == .pause {
             self.start()
         } else if self.timerModel.timerStatus == .running {
             self.pause()
