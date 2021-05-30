@@ -12,5 +12,6 @@ enum TimeFormat {
     case hr2
     case min1
     case min2
-    case sec
+    case sec1
+    case sec2
 }

@@ -19,6 +19,8 @@ class TimerViewModel: ObservableObject{
     @Published var secSelection = 0
     @Published var timeLeftStr = ""
     @Published var alermOn = true
+    @Published var aflag = true
+    @Published var bflag = false
     var timeLeftStrNum = 0.0
     let soundModel = SoundModel()
     let hourSec = 3600
@@ -33,8 +35,10 @@ class TimerViewModel: ObservableObject{
     }
     
     func setTimeFormat(time_val: Int){
-        if time_val < minSec {
-            timerModel.displayedTimeFormat = .sec
+        if time_val < 10 {
+            timerModel.displayedTimeFormat = .sec1
+        }else if time_val < minSec {
+            timerModel.displayedTimeFormat = .sec2
         } else if time_val < minSec * 10 {
             timerModel.displayedTimeFormat = .min1
         } else if time_val < hourSec {
@@ -50,6 +54,7 @@ class TimerViewModel: ObservableObject{
         let hr = timerModel.timeLeft / timeResolution / hourSec
         let min = timerModel.timeLeft / timeResolution % hourSec / minSec
         let sec = timerModel.timeLeft / timeResolution % hourSec % minSec
+        let decimal = timerModel.timeLeft % timeResolution
         
         setTimeFormat(time_val: timerModel.timeLeft / timeResolution)
         
@@ -66,8 +71,11 @@ class TimerViewModel: ObservableObject{
         case .min1:
             self.timeLeftStr = String(format: "%01d:%02d", min, sec)
             self.timeLeftStrNum = 2.8
-        case .sec:
-            self.timeLeftStr = String(format: "%02d", sec)
+        case .sec2:
+            self.timeLeftStr = String(format: "%02d.%01d", sec, decimal)
+            self.timeLeftStrNum = 2.8
+        case .sec1:
+            self.timeLeftStr = String(format: "%01d.%01d", sec, decimal)
             self.timeLeftStrNum = 1.8
         }
     }
@@ -108,6 +116,8 @@ class TimerViewModel: ObservableObject{
                 self.setTimer()
                 self.setTimeLeftStr()
                 self.timerModel.timerStatus = .ready
+                self.aflag = false
+                self.bflag = true
             }
         }
     }
@@ -130,7 +140,7 @@ class TimerViewModel: ObservableObject{
             self.setTimer()
             self.setTimeLeftStr()
         }
-        if self.timerModel.timeLeft != 0 && self.timerModel.timerStatus != .running {
+        if self.timerModel.timerStatus == .ready || self.timerModel.timerStatus == .stopped || self.timerModel.timerStatus == .pause {
             self.start()
         } else if self.timerModel.timerStatus == .running {
             self.pause()
