@@ -29,14 +29,17 @@ class TimerViewModel: ObservableObject{
     func setTimer(){
         timerModel.setTime = hourSelection * hourSec + minSelection * minSec + secSelection
         timerModel.timeLeft = timerModel.setTime * timeResolution
-        
-        if timerModel.setTime < minSec {
+        setTimeFormat(time_val: timerModel.setTime)
+    }
+    
+    func setTimeFormat(time_val: Int){
+        if time_val < minSec {
             timerModel.displayedTimeFormat = .sec
-        } else if timerModel.setTime < minSec * 10 {
+        } else if time_val < minSec * 10 {
             timerModel.displayedTimeFormat = .min1
-        } else if timerModel.setTime < hourSec {
+        } else if time_val < hourSec {
             timerModel.displayedTimeFormat = .min2
-        } else if timerModel.setTime < hourSec * 10 {
+        } else if time_val < hourSec * 10 {
             timerModel.displayedTimeFormat = .hr1
         } else {
             timerModel.displayedTimeFormat = .hr2
@@ -47,6 +50,8 @@ class TimerViewModel: ObservableObject{
         let hr = timerModel.timeLeft / timeResolution / hourSec
         let min = timerModel.timeLeft / timeResolution % hourSec / minSec
         let sec = timerModel.timeLeft / timeResolution % hourSec % minSec
+        
+        setTimeFormat(time_val: timerModel.timeLeft / timeResolution)
         
         switch timerModel.displayedTimeFormat {
         case .hr2:
