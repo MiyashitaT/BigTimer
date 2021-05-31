@@ -61,13 +61,13 @@ class TimerViewModel: ObservableObject{
         switch timerModel.displayedTimeFormat {
         case .hr2:
             self.timeLeftStr = String(format: "%02d:%02d:%02d", hr, min, sec)
-            self.timeLeftStrNum = 5.5
+            self.timeLeftStrNum = 5.6
         case .hr1:
             self.timeLeftStr = String(format: "%01d:%02d:%02d", hr, min, sec)
-            self.timeLeftStrNum = 4.6
+            self.timeLeftStrNum = 4.7
         case .min2:
             self.timeLeftStr = String(format: "%02d:%02d", min, sec)
-            self.timeLeftStrNum = 3.6
+            self.timeLeftStrNum = 3.7
         case .min1:
             self.timeLeftStr = String(format: "%01d:%02d", min, sec)
             self.timeLeftStrNum = 2.8
@@ -82,10 +82,11 @@ class TimerViewModel: ObservableObject{
     
     func calcTimeSize(height: CGFloat, width: CGFloat) -> CGFloat{
         let width_size = width / CGFloat(self.timeLeftStrNum)
-        if width_size < height{
+        let height_size = height / 1.05
+        if width_size < height_size{
             return width_size
         } else{
-            return height
+            return height_size
         }
     }
     
@@ -115,7 +116,6 @@ class TimerViewModel: ObservableObject{
                 self.isStopping = false
                 self.setTimer()
                 self.setTimeLeftStr()
-                self.timerModel.timerStatus = .ready
                 self.aflag = false
                 self.bflag = true
             }
@@ -139,6 +139,8 @@ class TimerViewModel: ObservableObject{
         if timerModel.timerStatus == .ready {
             self.setTimer()
             self.setTimeLeftStr()
+            self.aflag = true
+            self.bflag = false
         }
         if self.timerModel.timerStatus == .ready || self.timerModel.timerStatus == .stopped || self.timerModel.timerStatus == .pause {
             self.start()
