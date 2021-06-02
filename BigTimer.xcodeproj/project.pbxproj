@@ -37,7 +37,7 @@
 		D8B7A23F261A003500C2DAEB /* TimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C717AE2619A7E700E4F10B /* TimeFormat.swift */; };
 		D8B7A243261A003800C2DAEB /* SoundList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C717BD2619C38800E4F10B /* SoundList.swift */; };
 		D8B7A247261A003B00C2DAEB /* TimeStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C717A22619A38600E4F10B /* TimeStatus.swift */; };
-		D8BB0A172667036B0077BF4A /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D8BB0A162667036B0077BF4A /* alarm.mp3 */; };
+		D8BB0A25266707930077BF4A /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D8BB0A24266707930077BF4A /* alarm.mp3 */; };
 		D8C7176526198B2D00E4F10B /* BigTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C7176426198B2D00E4F10B /* BigTimerApp.swift */; };
 		D8C7176926198B3000E4F10B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8C7176826198B3000E4F10B /* Assets.xcassets */; };
 		D8C7176C26198B3000E4F10B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8C7176B26198B3000E4F10B /* Preview Assets.xcassets */; };
@@ -80,7 +80,7 @@
 		6E929C742619E7A900660A30 /* SoundListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundListView.swift; sourceTree = "<group>"; };
 		6E929C7C2619EA6A00660A30 /* ScreenButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenButtonView.swift; sourceTree = "<group>"; };
 		6E929C8A2619FE5C00660A30 /* SoundButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundButtonView.swift; sourceTree = "<group>"; };
-		D8BB0A162667036B0077BF4A /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
+		D8BB0A24266707930077BF4A /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
 		D8C7176126198B2D00E4F10B /* BigTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BigTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8C7176426198B2D00E4F10B /* BigTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigTimerApp.swift; sourceTree = "<group>"; };
 		D8C7176826198B3000E4F10B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 		D8453A022665B7770013E971 /* Sound */ = {
 			isa = PBXGroup;
 			children = (
-				D8BB0A162667036B0077BF4A /* alarm.mp3 */,
+				D8BB0A24266707930077BF4A /* alarm.mp3 */,
 			);
 			path = Sound;
 			sourceTree = "<group>";
@@ -363,7 +363,7 @@
 				6E7EDD9C262D0829003E3CE5 /* (null) in Resources */,
 				6E7EDD85262D041F003E3CE5 /* (null) in Resources */,
 				6E7EDD7B262D0038003E3CE5 /* (null) in Resources */,
-				D8BB0A172667036B0077BF4A /* alarm.mp3 in Resources */,
+				D8BB0A25266707930077BF4A /* alarm.mp3 in Resources */,
 				D8C7176C26198B3000E4F10B /* Preview Assets.xcassets in Resources */,
 				6E7EDDA6262D083F003E3CE5 /* DSEG7ClassicMini-Bold.ttf in Resources */,
 				D8C7176926198B3000E4F10B /* Assets.xcassets in Resources */,
