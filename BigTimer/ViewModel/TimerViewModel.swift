@@ -4,7 +4,7 @@
 //
 //  Created by 宮下知也 on 2021/04/04.
 //
-
+import AVFoundation
 import Foundation
 import SwiftUI
 import AudioToolbox
@@ -27,6 +27,7 @@ class TimerViewModel: ObservableObject{
     let minSec = 60
     let timeResolution = 10
     var timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
+    private let alarmSound = try!  AVAudioPlayer(data: NSDataAsset(name: "alarm")!.data)
     
     func setTimer(){
         timerModel.setTime = hourSelection * hourSec + minSelection * minSec + secSelection
@@ -99,13 +100,11 @@ class TimerViewModel: ObservableObject{
         } else {
             self.timerModel.timerStatus = .stopping
             self.isStopping = true
-            if self.soundModel.isAlarmOn{
-                AudioServicesPlayAlertSoundWithCompletion(self.soundModel.soundID, nil)
-            }
             
-            if self.soundModel.isVibrationOn{
-                AudioServicesPlayAlertSoundWithCompletion(SystemSoundID(kSystemSoundID_Vibrate)) {}
+            if self.soundModel.isAlarmOn{
+                alarmSound.play()
             }
+            AudioServicesPlayAlertSoundWithCompletion(SystemSoundID(kSystemSoundID_Vibrate)) {}
             // 1.0秒経過したらstoppedに
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 self.timerModel.timeLeft = self.timerModel.setTime
