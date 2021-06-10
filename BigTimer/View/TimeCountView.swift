@@ -49,6 +49,8 @@ struct TimeCountView: View {
                 Spacer()
             }
         }
+        .edgesIgnoringSafeArea(.leading)
+        .edgesIgnoringSafeArea(.trailing)
         .onReceive(timerViewModel.timer) { _ in
             timerViewModel.run()
         }
