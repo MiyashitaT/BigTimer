@@ -18,7 +18,7 @@ struct TimeTextView: View {
                     Spacer()
                     Text(timerViewModel.timeLeftStr)
                         .font(.custom("DSEG7ClassicMini-Bold", size: timerViewModel.calcTimeSize(height: geometry.size.height, width: geometry.size.width)))
-                        .foregroundColor(self.timerViewModel.isStopping ? Color.red : Color.black)
+                        .foregroundColor(self.timerViewModel.isStopping ? .red : .primary)
                     Spacer()
                 }
                 Spacer()
