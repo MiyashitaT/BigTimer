@@ -141,7 +141,7 @@ class TimerViewModel: ObservableObject{
             self.aflag = true
             self.bflag = false
         }
-        if self.timerModel.timerStatus == .ready || self.timerModel.timerStatus == .stopped || self.timerModel.timerStatus == .pause {
+        if (self.timerModel.timerStatus == .ready && timerModel.timeLeft != 0) || self.timerModel.timerStatus == .stopped || self.timerModel.timerStatus == .pause {
             self.start()
         } else if self.timerModel.timerStatus == .running {
             self.pause()
